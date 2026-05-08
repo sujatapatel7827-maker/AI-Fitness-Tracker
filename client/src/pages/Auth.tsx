@@ -20,7 +20,7 @@ const Auth = () => {
     const endpoint = isLogin ? '/api/auth/login' : '/api/auth/signup';
     
     try {
-      const response = await fetch(`http://localhost:8080${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

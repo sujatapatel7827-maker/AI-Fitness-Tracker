@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Activity, Dumbbell, Utensils, Users, Settings, LogOut, 
   Search, Bell, Calendar, Plus, Heart, Flame, Timer, 
-  ChevronRight, Play, Star, TrendingUp, Filter, CheckCircle2, 
-  Pause, Square, ChevronLeft, Trash2, X, Shield, Moon, BellRing, User,
-  Save, Eye, EyeOff, Lock, Smartphone, Globe, Sun, Brain as BrainIcon
+  ChevronRight, Play, Star, CheckCircle2, 
+  Pause, Square, ChevronLeft, X, Shield, Moon, BellRing, User,
+  Save, EyeOff, Lock, Smartphone, Globe, Sun, Brain as BrainIcon
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -71,7 +71,7 @@ const Dashboard = () => {
 
   const fetchUserData = async (userId: number) => {
     try {
-      const res = await fetch(`http://localhost:8080/api/user/${userId}`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/user/${userId}`);
       if (res.ok) {
         const data = await res.json();
         setUserProfile(prev => ({ ...prev, ...data }));
@@ -81,8 +81,8 @@ const Dashboard = () => {
 
   const fetchUserLogs = async (userId: number) => {
     try {
-      const resDiet = await fetch(`http://localhost:8080/api/diet/${userId}`);
-      const resWorkout = await fetch(`http://localhost:8080/api/workout/${userId}`);
+      const resDiet = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/diet/${userId}`);
+      const resWorkout = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/workout/${userId}`);
       
       if (resDiet.ok) {
         const meals = await resDiet.json();
@@ -141,7 +141,7 @@ const Dashboard = () => {
     };
 
     try {
-      await fetch(`http://localhost:8080/api/workout/${user.id}`, {
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/workout/${user.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(workoutData)
@@ -162,7 +162,7 @@ const Dashboard = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:8080/api/diet/${user.id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/diet/${user.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(mealData)
