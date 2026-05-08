@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:wght@400;600;700;800&family=Pacifico&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+@import "tailwindcss";
+
+*{
+   font-family: "Rethink Sans", sans-serif;
+}

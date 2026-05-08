@@ -1,0 +1,40 @@
+# Build artifacts
+**/target/
+**/dist/
+**/build/
+**/node_modules/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.project
+.settings/
+.classpath
+.factorypath
+.apt_generated/
+
+# Environment and sensitive data
+.env
+.env.*
+**/application.properties
+**/application.yml
+!**/src/main/resources/application-sample.properties
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# OS specific
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
